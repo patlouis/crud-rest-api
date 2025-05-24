@@ -1,4 +1,3 @@
-import '../App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -13,9 +12,13 @@ function Home() {
 
   return (
     <>
-      <div>
-        <div>
-          <table>
+      <div className="d-flex vh-100 bg-secondary justify-content-center align-items-center">
+        <div className="w-50 bg-white rounded p-3">
+          <h2>Employee List</h2>
+          <div className="d-flex justify-content-end">
+            <button className="btn btn-success">Create +</button>
+          </div>
+          <table className="table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -31,8 +34,8 @@ function Home() {
                   <td>{employee.full_name}</td>
                   <td>{employee.job_title}</td>
                   <td>
-                    <button>Update</button>
-                    <button>Delete</button>
+                    <button className="btn btn-primary">Update</button>
+                    <button className="btn btn-danger mx-2">Delete</button>
                   </td>
                 </tr>
               ))}

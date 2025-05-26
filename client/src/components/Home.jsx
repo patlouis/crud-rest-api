@@ -21,7 +21,7 @@ function Home() {
   
   return (
     <>
-      <div className="d-flex w-100 bg-secondary justify-content-center align-items-center">
+      <div className="d-flex min-vh-100 bg-secondary justify-content-center align-items-center">
         <div className="w-50 bg-white rounded p-3">
           <h2>Employee List</h2>
           <div className="d-flex justify-content-end">

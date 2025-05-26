@@ -17,14 +17,23 @@ function Read() {
     <div className="d-flex vh-100 bg-secondary justify-content-center align-items-center">
       <div className="w-50 bg-white rounded p-3"> 
       <h2>Employee Details</h2>
-      <div className="d-flex justify-content-end">
-        <Link to={`/edit/${employee.id}`} className="btn btn-success btn-sm">Edit</Link>
-        <Link to="/" className="btn btn-success btn-sm mx-2">Go Back</Link>
+
+      {/* Header section */}
+      <div className="d-flex justify-content-end mb-2">
+        <Link to={`/edit/${employee.id}`} className="btn btn-success btn-sm mx-2">Edit</Link>
+        <Link to="/" className="btn btn-success btn-sm">Go Back</Link>
       </div>
-      <div className="p-2">
-        <h3>{employee.id}</h3>
-        <h3>{employee.full_name}</h3>
-        <h3>{employee.job_title}</h3>
+      {/* Employee Details Section */}
+      <div className="p-3 border rounded shadow-sm bg-white space-y-2">
+        <div>
+          <span className="font-semibold text-gray-600">ID:</span> {employee.id}
+        </div>
+        <div>
+          <span className="font-semibold text-gray-600">Name:</span> {employee.full_name}
+        </div>
+        <div>
+          <span className="font-semibold text-gray-600">Title:</span> {employee.job_title}
+        </div>
       </div>
       </div>
     </div>

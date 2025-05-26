@@ -3,7 +3,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios';
 
 function Update() {
-
     const {id} = useParams();
     const navigate = useNavigate();
 

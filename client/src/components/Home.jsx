@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Home() {
@@ -12,11 +13,11 @@ function Home() {
 
   return (
     <>
-      <div className="d-flex vh-100 bg-secondary justify-content-center align-items-center">
+      <div className="d-flex w-100 bg-secondary justify-content-center align-items-center">
         <div className="w-50 bg-white rounded p-3">
           <h2>Employee List</h2>
           <div className="d-flex justify-content-end">
-            <button className="btn btn-success">Create +</button>
+            <Link to="/create" className="btn btn-success btn-sm">Create +</Link>
           </div>
           <table className="table">
             <thead>
@@ -34,8 +35,9 @@ function Home() {
                   <td>{employee.full_name}</td>
                   <td>{employee.job_title}</td>
                   <td>
-                    <button className="btn btn-primary">Update</button>
-                    <button className="btn btn-danger mx-2">Delete</button>
+                    <Link to={`/read/${employee.id}`} className="btn btn-secondary btn-sm">Read</Link>
+                    <Link to={`/edit/${employee.id}`} className="btn btn-primary btn-sm mx-2">Update</Link>
+                    <button className="btn btn-danger btn-sm">Delete</button>
                   </td>
                 </tr>
               ))}

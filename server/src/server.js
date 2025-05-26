@@ -48,6 +48,17 @@ app.put('/update/:id', (req, res) => {
     });
 });
 
+app.delete('/delete/:id', (req, res) => {
+    const sql = "DELETE FROM EMPLOYEE WHERE ID = ?";
+    const id = req.params.id;
+
+    connection.query(sql, [id], (err, result) => {
+        if (err) return res.json(err);
+        return res.json(result);
+    });
+
+});
+
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`);
     connection.connect(err => {
